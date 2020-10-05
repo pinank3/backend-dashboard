@@ -11,6 +11,8 @@
       @if(Auth::user()->can('manage-users'))
       <li class="menu-header">Users</li>
       <li class="{{ Request::route()->getName() == 'admin.users' ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin.users') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
+      <li class="menu-header">Tasks</li>
+      <li><a class="nav-link" href="{{ route('task-list') }}"><i class="fa fa-tasks"></i> <span>Tasks</span></a></li>
       @endif
     </ul>
 </aside>

@@ -131,7 +131,7 @@ class UserController extends Controller
             $user->delete();
         } else
         {
-            return response()->json(['message' => 'User accounts cannot be deleted in demo mode.'], 400);
+            return response()->json(['message' => 'User accounts cannot be deleted.'], 400);
         }
     }
 

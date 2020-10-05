@@ -33,3 +33,11 @@ Route::name('js.')->group(function() {
 Route::get('users/auth', function() {
     return response()->json(['user' => Auth::check() ? Auth::user() : false]);
 });
+
+
+  Route::get('add-task', [ 'as' => 'add-task', 'uses' => 'TaskController@addTask']);
+    Route::post('post-task', [ 'as' => 'post-task', 'uses' => 'TaskController@postTask']);
+    Route::get('edit-task/{id}', [ 'as' => 'edit-task', 'uses' => 'TaskController@editTask']);
+    Route::post('update-task/{id}', [ 'as' => 'update-task', 'uses' => 'TaskController@updateTask']);
+    Route::get('task-list', [ 'as' => 'task-list', 'uses' => 'TaskController@index']);
+    Route::get('delete-task/{id}',['as'=>'delete-task','uses'=>'TaskController@deleteTask']);
